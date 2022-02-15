@@ -7,5 +7,5 @@ const rootReducer = (state, action) => {
 };
 
 // Create Store
-const store = redux.createStore();
+const store = redux.createStore(rootReducer);
 console.log(store);
