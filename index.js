@@ -1,8 +1,14 @@
 const redux = require("redux");
 // console.log(redux);
 
+// State
+const initState = {
+  num: 0,
+  name: "Borhan",
+};
+
 // Reducer
-const rootReducer = (state, action) => {
+const rootReducer = (state = initState, action) => {
   return state;
 };
 
