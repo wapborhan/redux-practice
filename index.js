@@ -8,4 +8,4 @@ const rootReducer = (state, action) => {
 
 // Create Store
 const store = redux.createStore(rootReducer);
-console.log(store);
+console.log(store.getState());
