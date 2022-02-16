@@ -15,6 +15,14 @@ const rootReducer = (state = initState, action) => {
 // Create Store
 const store = redux.createStore(rootReducer);
 
-console.log(store.getState());
+// Dispatching Actio
+store.dispatch({
+  type: "INC_NUM",
+});
 
-// Dispatching Action
+store.dispatch({
+  type: "INC_NUM",
+  value: 34,
+});
+
+console.log(store.getState());
