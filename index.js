@@ -44,12 +44,12 @@ store.subscribe(() => {
 
 // Dispatching Actio
 store.dispatch({
-  type: "INC_NUM",
+  type: "ADD_NUM",
+  value: 34,
 });
 
 store.dispatch({
-  type: "ADD_NUM",
-  value: 34,
+  type: "INC_NUM",
 });
 
 store.dispatch({
