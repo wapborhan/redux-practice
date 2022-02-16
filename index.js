@@ -19,6 +19,13 @@ const rootReducer = (state = initState, action) => {
   if (action.type === "ADD_NUM") {
     return {
       ...state,
+      num: state.num + action.value,
+    };
+  }
+
+  if (action.type === "ADD_NAME") {
+    return {
+      ...state,
       name: state.name + " " + action.value,
     };
   }
@@ -30,6 +37,11 @@ const store = redux.createStore(rootReducer);
 
 console.log(store.getState());
 
+//Subscribe
+store.subscribe(() => {
+  console.log("[Subscribe]", store.getState());
+});
+
 // Dispatching Actio
 store.dispatch({
   type: "INC_NUM",
@@ -37,7 +49,10 @@ store.dispatch({
 
 store.dispatch({
   type: "ADD_NUM",
-  value: "Uddin",
+  value: 34,
 });
 
-console.log(store.getState());
+store.dispatch({
+  type: "ADD_NAME",
+  value: "Uddin",
+});
