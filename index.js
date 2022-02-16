@@ -9,11 +9,26 @@ const initState = {
 
 // Reducer
 const rootReducer = (state = initState, action) => {
+  if (action.type === "INC_NUM") {
+    return {
+      ...state,
+      num: state.num + 1,
+    };
+  }
+
+  if (action.type === "ADD_NUM") {
+    return {
+      ...state,
+      name: state.name + " " + action.value,
+    };
+  }
   return state;
 };
 
 // Create Store
 const store = redux.createStore(rootReducer);
+
+console.log(store.getState());
 
 // Dispatching Actio
 store.dispatch({
@@ -21,8 +36,8 @@ store.dispatch({
 });
 
 store.dispatch({
-  type: "INC_NUM",
-  value: 34,
+  type: "ADD_NUM",
+  value: "Uddin",
 });
 
 console.log(store.getState());
