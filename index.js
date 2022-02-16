@@ -14,4 +14,7 @@ const rootReducer = (state = initState, action) => {
 
 // Create Store
 const store = redux.createStore(rootReducer);
+
 console.log(store.getState());
+
+// Dispatching Action
